@@ -1,0 +1,38 @@
+{
+  "name": "@dnlup/fastify-traps",
+  "version": "1.0.0-0",
+  "description": "A fastify plugin to close gracefully the server on SIGINT and SIGTERM signals",
+  "main": "index.js",
+  "scripts": {
+    "doc": "markdown-toc -i README.md",
+    "lint": "standard --fix | snazzy",
+    "test": "npm run lint && tap test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnlup/fastify-traps.git"
+  },
+  "keywords": [
+    "fastify",
+    "close",
+    "graceful",
+    "gracefully",
+    "SIGINT",
+    "SIGTERM"
+  ],
+  "author": "Daniele Belardi <dwon.dnl@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnlup/fastify-traps/issues"
+  },
+  "homepage": "https://github.com/dnlup/fastify-traps#readme",
+  "devDependencies": {
+    "markdown-toc": "^1.2.0",
+    "snazzy": "^9.0.0",
+    "standard": "^16.0.1",
+    "tap": "^14.10.8"
+  },
+  "dependencies": {
+    "fastify-plugin": "^3.0.0"
+  }
+}

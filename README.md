@@ -1,5 +1,7 @@
 # fastify-traps
 
-> A Fastify plugin that adds process traps to exit gracefully
+> A fastify plugin to close gracefully the server on SIGINT and SIGTERM signals.
 
-**This is a WIP**
+<!-- toc -->
+
+<!-- tocstop -->
