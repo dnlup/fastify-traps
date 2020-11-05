@@ -50,7 +50,42 @@ test('invalid options', async t => {
   }
   t.end()
 })
-test('valid options', { todo: true }, t => {})
+
+test('valid options', async t => {
+  const list = [
+    {
+      opts: {
+        onSignal: () => {}
+      }
+    },
+    {
+      opts: {
+        onClose: () => {}
+      }
+    },
+    {
+      opts: {
+        onTimeout: () => {}
+      }
+    },
+    {
+      opts: {
+        onError: () => {}
+      }
+    },
+    {
+      opts: {
+        timeout: 7
+      }
+    }
+  ]
+
+  for (const [index, item] of list.entries()) {
+    const fastify = Fastify()
+    await t.resolves(() => fastify.register(plugin, item.opts), `item ${index}`)
+  }
+  t.end()
+})
 test('close', { todo: true }, t => {})
 test('close timeout', { todo: true }, t => {})
 test('close error', { todo: true }, t => {})
