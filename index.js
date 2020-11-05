@@ -54,14 +54,14 @@ function plugin (fastify, opts, next) {
   for (const func of ['onSignal', 'onClose', 'onTimeout', 'onError']) {
     const f = config[func]
     if (typeof f !== 'function') {
-      return next(new TypeError(`${func} must be a function, received ${f}`))
+      return next(new TypeError(`${func} must be a function, received ${typeof f}`))
     }
   }
   if (typeof config.timeout !== 'number') {
-    return next(new TypeError(`timeout must be a number, received ${config.timeout}`))
+    return next(new TypeError(`timeout must be a number, received ${typeof config.timeout}`))
   }
   if (config.timeout < 1) {
-    return next(new RangeError(`timeout must be grather than 0, received ${config.timeout}`))
+    return next(new RangeError(`timeout must be greather than 0, received ${config.timeout}`))
   }
 
   for (const signal of ['SIGINT', 'SIGTERM']) {
