@@ -6,7 +6,7 @@
   "scripts": {
     "doc": "markdown-toc -i README.md",
     "lint": "standard --fix | snazzy",
-    "test": "npm run lint && tap test.js"
+    "test": "npm run lint && tap test/**.test.js"
   },
   "repository": {
     "type": "git",

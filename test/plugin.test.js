@@ -2,7 +2,7 @@
 
 const { test } = require('tap')
 const Fastify = require('fastify')
-const plugin = require('./')
+const plugin = require('../')
 
 test('invalid options', async t => {
   const list = [
