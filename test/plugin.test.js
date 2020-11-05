@@ -41,12 +41,19 @@ test('invalid options', async t => {
         timeout: 0
       },
       error: new RangeError('timeout must be greather than 0, received 0')
+    },
+    {
+      opts: {
+        strict: 'true'
+      },
+      error: new TypeError('strict must be a boolean, received string')
     }
   ]
 
   for (const [index, item] of list.entries()) {
     const fastify = Fastify()
-    await t.rejects(() => fastify.register(plugin, item.opts), item.error, `item ${index}`)
+    const opts = Object.assign({}, item.opts, item.opts.strict ? {} : { strict: false })
+    await t.rejects(() => fastify.register(plugin, opts), item.error, `item ${index}`)
   }
   t.end()
 })
@@ -82,7 +89,8 @@ test('valid options', async t => {
 
   for (const [index, item] of list.entries()) {
     const fastify = Fastify()
-    await t.resolves(() => fastify.register(plugin, item.opts), `item ${index}`)
+    const opts = Object.assign({}, item.opts, { strict: false })
+    await t.resolves(() => fastify.register(plugin, opts), `item ${index}`)
   }
   t.end()
 })

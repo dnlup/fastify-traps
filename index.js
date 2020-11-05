@@ -47,7 +47,8 @@ function plugin (fastify, opts, next) {
     onClose: onClose.bind(fastify),
     onTimeout: onTimeout.bind(fastify),
     onError: onError.bind(fastify),
-    timeout: 2000
+    timeout: 2000,
+    strict: true
   }
   const config = Object.assign({}, DEFAULTS, opts)
 
@@ -63,8 +64,14 @@ function plugin (fastify, opts, next) {
   if (config.timeout < 1) {
     return next(new RangeError(`timeout must be greather than 0, received ${config.timeout}`))
   }
+  if (typeof config.strict !== 'boolean') {
+    return next(new TypeError(`strict must be a boolean, received ${typeof config.strict}`))
+  }
 
   for (const signal of ['SIGINT', 'SIGTERM']) {
+    if (config.strict && process.listenerCount(signal) > 0) {
+      return next(new Error(`A ${signal} handler is already registered`))
+    }
     process.once(signal, onCloseSignal.bind(fastify, config))
   }
   next()
