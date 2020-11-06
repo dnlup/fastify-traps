@@ -47,7 +47,7 @@ function plugin (fastify, opts, next) {
     onClose: onClose.bind(fastify),
     onTimeout: onTimeout.bind(fastify),
     onError: onError.bind(fastify),
-    timeout: 2000,
+    timeout: 1e4,
     strict: true
   }
   const config = Object.assign({}, DEFAULTS, opts)
