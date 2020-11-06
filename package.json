@@ -28,6 +28,7 @@
   "homepage": "https://github.com/dnlup/fastify-traps#readme",
   "devDependencies": {
     "fastify": "^3.7.0",
+    "husky": "^4.3.0",
     "markdown-toc": "^1.2.0",
     "snazzy": "^9.0.0",
     "standard": "^16.0.1",
