@@ -1,6 +1,8 @@
 'use strict'
 
 const { test } = require('tap')
+const { fork } = require('child_process')
+const { join } = require('path')
 const Fastify = require('fastify')
 const plugin = require('../')
 
@@ -94,6 +96,46 @@ test('valid options', async t => {
   }
   t.end()
 })
-test('close', { todo: true }, t => {})
+test('close', { only: true }, t => {
+  t.plan(10)
+  function testSignal (signal) {
+    const server = fork(join(__dirname, 'fixtures/close.js'), {
+      stdio: 'pipe'
+    })
+
+    let stdout = ''
+    let errored = false
+
+    server.on('message', payload => {
+      switch (payload) {
+        case 'error':
+          errored = true
+          break
+        case 'listening':
+          server.kill(signal)
+          break
+      }
+    })
+
+    server.stdout.on('data', chunk => {
+      stdout += chunk
+    })
+
+    server.on('exit', code => {
+      t.false(errored)
+      t.is(code, 0)
+      const reg = new RegExp(`Received Signal: ${signal}`)
+      t.true(reg.test(stdout))
+      t.true(/Closing/.test(stdout))
+      t.true(/Closed/.test(stdout))
+    })
+    server.on('error', t.error)
+  }
+
+  for (const signal of ['SIGINT', 'SIGTERM']) {
+    testSignal(signal)
+  }
+})
+
 test('close timeout', { todo: true }, t => {})
 test('close error', { todo: true }, t => {})
