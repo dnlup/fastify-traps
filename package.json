@@ -9,6 +9,7 @@
     "test": "npm run lint && tap test/**.test.js",
     "test:ci": "npm run test -- --cov --coverage-report=lcovonly",
     "test:coverage": "npm test -- --coverage-report=html",
+    "prerelease": "npm cit",
     "release": "HUSKY_SKIP_HOOKS=1 standard-version",
     "postrelease": "npm run push && npm publish",
     "prenext": "npm cit",
