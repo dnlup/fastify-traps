@@ -14,7 +14,6 @@ fastify.register((f, o, n) => {
 })
 
 fastify.register(plugin, {
-  timeout: 500,
   strict: false
 })
 

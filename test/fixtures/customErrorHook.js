@@ -8,14 +8,13 @@ const fastify = Fastify(fastifyOptions)
 
 fastify.register((f, o, n) => {
   f.addHook('onClose', (f, n) => {
-    setTimeout(n, 2000)
+    n(new Error('test error'))
   })
   n()
 })
 
 fastify.register(plugin, {
-  onTimeout (timeout) { console.log('custom onTimeout hook') },
-  timeout: 500,
+  onError (error) { console.log('custom onError hook') }, // eslint-disable-line
   strict: false
 })
 
