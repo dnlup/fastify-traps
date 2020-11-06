@@ -96,7 +96,7 @@ test('valid options', async t => {
   }
   t.end()
 })
-test('close', { only: true }, t => {
+test('close', t => {
   t.plan(10)
   function testSignal (signal) {
     const server = fork(join(__dirname, 'fixtures/close.js'), {
@@ -199,6 +199,38 @@ test('close error', t => {
     t.true(/Received Signal: SIGINT/.test(stdout))
     t.true(/Closing/.test(stdout))
     t.true(/"type":"Error","msg":"test error"\}/.test(stdout))
+    t.end()
+  })
+})
+
+test('custom close hooks', t => {
+  const server = fork(join(__dirname, 'fixtures/customCloseHooks.js'), {
+    stdio: 'pipe'
+  })
+
+  let stdout = ''
+  let errored = false
+
+  server.on('message', payload => {
+    switch (payload) {
+      case 'error':
+        errored = true
+        break
+      case 'listening':
+        server.kill('SIGINT')
+        break
+    }
+  })
+
+  server.stdout.on('data', chunk => {
+    stdout += chunk
+  })
+
+  server.on('exit', code => {
+    t.false(errored)
+    t.is(code, 0)
+    t.true(/custom onSignal hook/.test(stdout))
+    t.true(/custom onClose hook/.test(stdout))
     t.end()
   })
 })
