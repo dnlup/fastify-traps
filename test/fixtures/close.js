@@ -2,18 +2,9 @@
 
 const Fastify = require('fastify')
 const plugin = require('../../')
+const { send, fastifyOptions } = require('./util')
 
-function send (payload) {
-  if (process.send) {
-    process.send(payload)
-  }
-}
-
-const fastify = Fastify({
-  logger: {
-    level: 'warn'
-  }
-})
+const fastify = Fastify(fastifyOptions)
 
 fastify.register(plugin, { strict: false })
 
