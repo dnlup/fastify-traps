@@ -69,6 +69,7 @@ function plugin (fastify, opts, next) {
   }
 
   for (const signal of ['SIGINT', 'SIGTERM']) {
+    /* istanbul ignore next  */
     if (config.strict && process.listenerCount(signal) > 0) {
       return next(new Error(`A ${signal} handler is already registered`))
     }

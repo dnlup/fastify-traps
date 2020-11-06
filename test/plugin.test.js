@@ -234,3 +234,36 @@ test('custom close hooks', t => {
     t.end()
   })
 })
+
+test('custom timeout hook', t => {
+  const server = fork(join(__dirname, 'fixtures/customTimeoutHook.js'), {
+    stdio: 'pipe'
+  })
+
+  let stdout = ''
+  let errored = false
+
+  server.on('message', payload => {
+    switch (payload) {
+      case 'error':
+        errored = true
+        break
+      case 'listening':
+        server.kill('SIGINT')
+        break
+    }
+  })
+
+  server.stdout.on('data', chunk => {
+    stdout += chunk
+  })
+
+  server.on('exit', code => {
+    t.false(errored)
+    t.is(code, 1)
+    t.true(/Received Signal: SIGINT/.test(stdout))
+    t.true(/Closing/.test(stdout))
+    t.true(/custom onTimeout hook/.test(stdout))
+    t.end()
+  })
+})
