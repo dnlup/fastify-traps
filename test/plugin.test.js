@@ -170,4 +170,35 @@ test('close timeout', t => {
   })
 })
 
-test('close error', { todo: true }, t => {})
+test('close error', t => {
+  const server = fork(join(__dirname, 'fixtures/closeError.js'), {
+    stdio: 'pipe'
+  })
+
+  let stdout = ''
+  let errored = false
+
+  server.on('message', payload => {
+    switch (payload) {
+      case 'error':
+        errored = true
+        break
+      case 'listening':
+        server.kill('SIGINT')
+        break
+    }
+  })
+
+  server.stdout.on('data', chunk => {
+    stdout += chunk
+  })
+
+  server.on('exit', code => {
+    t.false(errored)
+    t.is(code, 1)
+    t.true(/Received Signal: SIGINT/.test(stdout))
+    t.true(/Closing/.test(stdout))
+    t.true(/"type":"Error","msg":"test error"\}/.test(stdout))
+    t.end()
+  })
+})
