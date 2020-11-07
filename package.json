@@ -1,0 +1,50 @@
+{
+  "name": "@dnlup/fastify-traps",
+  "version": "1.0.0-0",
+  "description": "A fastify plugin to close gracefully the server on SIGINT and SIGTERM signals",
+  "main": "index.js",
+  "scripts": {
+    "doc": "markdown-toc -i README.md",
+    "lint": "standard --fix | snazzy",
+    "test": "npm run lint && tap test/**.test.js",
+    "test:ci": "npm run test -- --cov --coverage-report=lcovonly",
+    "test:coverage": "npm test -- --coverage-report=html",
+    "prerelease": "npm cit",
+    "release": "HUSKY_SKIP_HOOKS=1 standard-version",
+    "postrelease": "npm run push && npm publish",
+    "prenext": "npm cit",
+    "next": "HUSKY_SKIP_HOOKS=1 standard-version --prerelease",
+    "postnext": "npm run push && npm publish --tag next",
+    "push": "git push origin --follow-tags `git rev-parse --abbrev-ref HEAD`"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dnlup/fastify-traps.git"
+  },
+  "keywords": [
+    "fastify",
+    "close",
+    "graceful",
+    "gracefully",
+    "SIGINT",
+    "SIGTERM"
+  ],
+  "author": "Daniele Belardi <dwon.dnl@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dnlup/fastify-traps/issues"
+  },
+  "homepage": "https://github.com/dnlup/fastify-traps#readme",
+  "devDependencies": {
+    "fastify": "^3.7.0",
+    "husky": "^4.3.0",
+    "markdown-toc": "^1.2.0",
+    "snazzy": "^9.0.0",
+    "standard": "^16.0.1",
+    "standard-version": "^9.0.0",
+    "tap": "^14.10.8"
+  },
+  "dependencies": {
+    "fastify-plugin": "^3.0.0"
+  }
+}
