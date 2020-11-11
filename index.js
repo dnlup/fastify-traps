@@ -78,4 +78,7 @@ function plugin (fastify, opts, next) {
   next()
 }
 
-module.exports = fp(plugin)
+module.exports = fp(plugin, {
+  fastify: '^3.0.0',
+  name: '@dnlup/fastify-traps'
+})
