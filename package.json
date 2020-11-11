@@ -31,6 +31,9 @@
   ],
   "author": "Daniele Belardi <dwon.dnl@gmail.com>",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/dnlup/fastify-traps/issues"
   },
