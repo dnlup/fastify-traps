@@ -1,5 +1,10 @@
 # fastify-traps
 
+[![npm version](https://badge.fury.io/js/%40dnlup%2Fhrtime-utils.svg)](https://badge.fury.io/js/%40dnlup%2Ffastify-traps)
+![Tests](https://github.com/dnlup/fastify-traps/workflows/Tests/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/dnlup/fastify-traps/badge.svg?branch=next)](https://coveralls.io/github/dnlup/fastify-traps?branch=next)
+[![Known Vulnerabilities](https://snyk.io/test/github/dnlup/fastify-traps/badge.svg?targetFile=package.json)](https://snyk.io/test/github/dnlup/fastify-traps?targetFile=package.json)
+
 > A fastify plugin to close the server gracefully on SIGINT and SIGTERM signals.
 
 <!-- toc -->
