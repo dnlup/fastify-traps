@@ -22,6 +22,9 @@
     "type": "git",
     "url": "git+https://github.com/dnlup/fastify-traps.git"
   },
+  "files": [
+    "index.js"
+  ],
   "keywords": [
     "fastify",
     "close",
