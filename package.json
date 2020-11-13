@@ -3,6 +3,7 @@
   "version": "1.0.0-0",
   "description": "A fastify plugin to close the server gracefully on SIGINT and SIGTERM signals",
   "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "doc": "markdown-toc -i README.md",
     "lint": "standard --fix | snazzy",
