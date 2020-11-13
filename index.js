@@ -19,7 +19,7 @@ function onError (error) {
   this.log.error(error)
 }
 
-function onCloseSignal ({ onSignal, onClose, onTimeout, onError, timeout }, signal) {
+function onCloseSignal ({ timeout, onSignal, onClose, onTimeout, onError }, signal) {
   onSignal(signal)
 
   const timer = setTimeout(() => {
@@ -43,11 +43,11 @@ function onCloseSignal ({ onSignal, onClose, onTimeout, onError, timeout }, sign
 
 function plugin (fastify, opts, next) {
   const DEFAULTS = {
+    timeout: 3e4,
     onSignal: onSignal.bind(fastify),
     onClose: onClose.bind(fastify),
     onTimeout: onTimeout.bind(fastify),
     onError: onError.bind(fastify),
-    timeout: 3e4,
     strict: true
   }
   const config = Object.assign({}, DEFAULTS, opts)
