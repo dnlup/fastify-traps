@@ -95,8 +95,11 @@ fastify.listen(3000)
 * `onClose` `<function>`: on signal custom [hook](#onclose)
 * `onTimeout` `<function>`: on signal custom [hook](#ontimeout)
 * `onError` `<function>`: on signal custom [hook](#onerror)
+* `strict` `<boolean>`: error if a `SIGINT` or `SIGTERM` handler is already registered. **Default:** `true`.
 
 As said previously, the hooks' context is bound to the `fastify` instance, so you can use `this` to refer to it.
+
+The `strict` option is present for testing purposes. It is better to avoid registering the plugin instead of disabling the strict check.
 
 #### onSignal(signal)
 
