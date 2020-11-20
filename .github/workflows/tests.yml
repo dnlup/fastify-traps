@@ -34,18 +34,5 @@ jobs:
       - name: Run tests
         run: npm run test:ci
 
-      - name: Coveralls Parallel
-        uses: coverallsapp/github-action@v1.1.2
-        with:
-          github-token: ${{ secrets.github_token }}
-          parallel: true
-
-  coverage:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Coveralls Finished
-        uses: coverallsapp/github-action@v1.1.2
-        with:
-          github-token: ${{ secrets.github_token }}
-          parallel-finished: true
+      - name: Coverage report
+        uses: codecov/codecov-action@v1
