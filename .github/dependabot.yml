@@ -12,3 +12,11 @@ updates:
     open-pull-requests-limit: 100
     assignees:
       - "dnlup"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    open-pull-requests-limit: 100
+    assignees:
+      - "dnlup"
