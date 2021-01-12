@@ -1,6 +1,6 @@
 # fastify-traps
 
-[![npm version](https://badge.fury.io/js/%40dnlup%2Fhrtime-utils.svg)](https://badge.fury.io/js/%40dnlup%2Ffastify-traps)
+[![npm version](https://badge.fury.io/js/%40dnlup%2Ffastify-traps.svg)](https://badge.fury.io/js/%40dnlup%2Ffastify-traps)
 ![Tests](https://github.com/dnlup/fastify-traps/workflows/Tests/badge.svg)
 [![codecov](https://codecov.io/gh/dnlup/fastify-traps/branch/next/graph/badge.svg?token=93VKYKIKCJ)](https://codecov.io/gh/dnlup/fastify-traps)
 [![Known Vulnerabilities](https://snyk.io/test/github/dnlup/fastify-traps/badge.svg?targetFile=package.json)](https://snyk.io/test/github/dnlup/fastify-traps?targetFile=package.json)
