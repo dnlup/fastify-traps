@@ -45,7 +45,7 @@
   "devDependencies": {
     "fastify": "^3.11.0",
     "husky": "^5.0.9",
-    "lint-staged": "^10.5.3",
+    "lint-staged": "^10.5.4",
     "markdown-toc": "^1.2.0",
     "snazzy": "^9.0.0",
     "standard": "^16.0.1",
