@@ -11,12 +11,13 @@
     "test:ci": "npm run test -- --cov --coverage-report=lcovonly",
     "test:coverage": "npm test -- --coverage-report=html",
     "prerelease": "npm cit",
-    "release": "HUSKY_SKIP_HOOKS=1 standard-version",
+    "release": "HUSKY=0 standard-version",
     "postrelease": "npm run push && npm publish",
     "prenext": "npm cit",
-    "next": "HUSKY_SKIP_HOOKS=1 standard-version --prerelease",
+    "next": "HUSKY=0 standard-version --prerelease",
     "postnext": "npm run push && npm publish --tag next",
-    "push": "git push origin --follow-tags `git rev-parse --abbrev-ref HEAD`"
+    "push": "git push origin --follow-tags `git rev-parse --abbrev-ref HEAD`",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
