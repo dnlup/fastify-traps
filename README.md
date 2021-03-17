@@ -19,6 +19,7 @@
     + [onClose()](#onclose)
     + [onTimeout(timeout)](#ontimeouttimeout)
     + [onError(error)](#onerrorerror)
+- [License](#license)
 
 <!-- tocstop -->
 
@@ -128,3 +129,7 @@ The plugin will call this hook when the timeout for waiting for the server to cl
 * `error` `<Error|*>`: the error that occurred while closing the server
 
 The plugin will call this hook when there is an error when closing the server.
+
+## License
+
+[ISC](./LICENSE)
