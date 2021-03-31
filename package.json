@@ -51,7 +51,7 @@
     "snazzy": "^9.0.0",
     "standard": "^16.0.1",
     "standard-version": "^9.1.1",
-    "tap": "^14.10.8"
+    "tap": "^15.0.0"
   },
   "dependencies": {
     "fastify-plugin": "^3.0.0"
