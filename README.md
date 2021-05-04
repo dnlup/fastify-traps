@@ -105,8 +105,6 @@ fastify.listen(3000)
 
 As said previously, the hooks' context is bound to the `fastify` instance, so you can use `this` to refer to it.
 
-The `strict` option is present for testing purposes. It is better to avoid registering the plugin instead of disabling the strict check.
-
 #### onSignal(signal)
 
 * `signal` `<string>`: the signal received
