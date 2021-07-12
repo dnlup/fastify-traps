@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0-0](https://github.com/dnlup/fastify-traps/compare/v1.1.2...v1.2.0-0) (2021-07-12)
+
+
+### Features
+
+* add typescript support ([3936334](https://github.com/dnlup/fastify-traps/commit/3936334cb2a0dffd8df7db2e0f5cd89438303fa1))
+
 ### [1.1.2](https://github.com/dnlup/fastify-traps/compare/v1.1.0...v1.1.2) (2021-05-04)
 
 ### [1.1.1](https://github.com/dnlup/fastify-traps/compare/v1.1.0...v1.1.1) (2021-05-04)
