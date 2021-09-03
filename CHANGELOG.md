@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0-1](https://github.com/dnlup/fastify-traps/compare/v1.2.0-0...v1.2.0-1) (2021-09-03)
+
+
+### Bug Fixes
+
+* Make plugin options optional ([763ee4b](https://github.com/dnlup/fastify-traps/commit/763ee4bb5295607942e409ed9e52b8c32329f9d0))
+
 ## [1.2.0-0](https://github.com/dnlup/fastify-traps/compare/v1.1.2...v1.2.0-0) (2021-07-12)
 
 
