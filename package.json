@@ -46,7 +46,7 @@
   },
   "homepage": "https://github.com/dnlup/fastify-traps#readme",
   "devDependencies": {
-    "@types/node": "^16.3.1",
+    "@types/node": "^17.0.0",
     "fastify": "^3.15.1",
     "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
