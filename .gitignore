@@ -41,3 +41,7 @@ node_modules/
 *.swp
 
 .clinic
+
+# lock files
+package-lock.json
+yarn.lock
