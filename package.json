@@ -1,6 +1,6 @@
 {
   "name": "@dnlup/fastify-traps",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "A Fastify plugin to close the server gracefully on SIGINT and SIGTERM signals",
   "main": "index.js",
   "type": "commonjs",
@@ -47,7 +47,7 @@
   "homepage": "https://github.com/dnlup/fastify-traps#readme",
   "devDependencies": {
     "@types/node": "^17.0.4",
-    "fastify": "^3.15.1",
+    "fastify": "^4.1.0",
     "husky": "^7.0.0",
     "lint-staged": "^12.1.4",
     "markdown-toc": "^1.2.0",
