@@ -198,7 +198,7 @@ test('close error', t => {
     t.equal(code, 1)
     t.ok(/Received Signal: SIGINT/.test(stdout))
     t.ok(/Closing/.test(stdout))
-    t.ok(/"type":"Error","msg":"test error"\}/.test(stdout))
+    t.ok(/"err":{"type":"Error","message":"test error"/.test(stdout))
     t.end()
   })
 })
