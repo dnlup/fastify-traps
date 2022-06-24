@@ -29,6 +29,12 @@
 $ npm i @dnlup/fastify-traps
 ```
 
+If you are using fastify 3, use the version `1` of the plugin:
+
+```bash
+$ npm i @dnlup/fastify-traps@1
+```
+
 ## Usage
 
 #### Default
