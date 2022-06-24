@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.0.0](https://github.com/dnlup/fastify-traps/compare/v1.2.0...v2.0.0) (2022-06-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop Node 12 support
+* Fastify version 3 is no longer supported
+
+### Features
+
+* revert version to 1.2.0 ([05acb2f](https://github.com/dnlup/fastify-traps/commit/05acb2f80a3f70a0ae38a93e6c9ffc380bc501d5))
+* support fastify v4 ([26b7bfd](https://github.com/dnlup/fastify-traps/commit/26b7bfd575cca23c3a6c000d416aa58868fb7a4d))
+
 ## [1.2.0](https://github.com/dnlup/fastify-traps/compare/v1.2.0-1...v1.2.0) (2021-12-24)
 
 ## [1.2.0-1](https://github.com/dnlup/fastify-traps/compare/v1.2.0-0...v1.2.0-1) (2021-09-03)
