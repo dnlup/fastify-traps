@@ -36,7 +36,7 @@
     "SIGINT",
     "SIGTERM"
   ],
-  "author": "Daniele Belardi <dnlup.dev@gmail.com>",
+  "author": "dnlup <dnlup.dev@gmail.com>",
   "license": "ISC",
   "publishConfig": {
     "access": "public"
