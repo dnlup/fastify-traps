@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/dnlup/fastify-traps/compare/v2.0.0...v3.0.0) (2023-08-31)
+
+
+### ⚠ BREAKING CHANGES
+
+* **types:** the hooks type is changed
+
+### Features
+
+* upgrade fastify-plugin from 3.0.1 to 4.0.0 ([a95fef8](https://github.com/dnlup/fastify-traps/commit/a95fef85087ff7f47736d5c73484467c243f2788))
+
+
+### Bug Fixes
+
+* **types:** fix hooks types ([eeb86c5](https://github.com/dnlup/fastify-traps/commit/eeb86c5c7f53527791618f189d262c75e85e7622))
+
 ## [2.0.0](https://github.com/dnlup/fastify-traps/compare/v1.2.0...v2.0.0) (2022-06-24)
 
 
