@@ -5,10 +5,10 @@ import {
 
 export interface TrapsPluginOptions {
   timeout?: number,
-  onSignal?: (signal: 'SIGTERM' | 'SIGINT') => {},
-  onClose?: () => {},
-  onTimeout?: (timeout: number) => {},
-  onError?: (error: Error|any) => {},
+  onSignal?: (signal: 'SIGTERM' | 'SIGINT') => void,
+  onClose?: () => void,
+  onTimeout?: (timeout: number) => void,
+  onError?: (error: Error|any) => void,
   strict?: boolean
 }
 
