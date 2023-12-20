@@ -1,7 +1,6 @@
 import {
   FastifyPluginCallback,
-  FastifyPluginAsync,
-} from 'fastify'
+} from 'fastify-plugin'
 
 export interface TrapsPluginOptions {
   timeout?: number,
@@ -12,7 +11,5 @@ export interface TrapsPluginOptions {
   strict?: boolean
 }
 
-export const trapsPluginCallback: FastifyPluginCallback<TrapsPluginOptions>;
-export const trapsPluginAsync: FastifyPluginAsync<TrapsPluginOptions>;
-
-export default trapsPluginCallback;
+const plugin: FastifyPluginCallback<TrapsPluginOptions>;
+export = plugin;
