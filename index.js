@@ -62,7 +62,7 @@ function plugin (fastify, opts, next) {
     return next(new TypeError(`timeout must be a number, received ${typeof config.timeout}`))
   }
   if (config.timeout < 1) {
-    return next(new RangeError(`timeout must be greather than 0, received ${config.timeout}`))
+    return next(new RangeError(`timeout must be greater than 0, received ${config.timeout}`))
   }
   if (typeof config.strict !== 'boolean') {
     return next(new TypeError(`strict must be a boolean, received ${typeof config.strict}`))
