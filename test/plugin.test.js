@@ -42,7 +42,7 @@ test('invalid options', async t => {
       opts: {
         timeout: 0
       },
-      error: new RangeError('timeout must be greather than 0, received 0')
+      error: new RangeError('timeout must be greater than 0, received 0')
     },
     {
       opts: {
