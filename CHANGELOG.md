@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [3.0.1](https://github.com/dnlup/fastify-traps/compare/v3.0.0...v3.0.1) (2023-12-21)
+
+
+### Bug Fixes
+
+* exported module types ([6daab84](https://github.com/dnlup/fastify-traps/commit/6daab8446e6bc843081c0bcb1e6a149e46c2e084))
+* typo ([30942a2](https://github.com/dnlup/fastify-traps/commit/30942a2e57d93dcb02092fb78c1e53b6022a2de6))
+
 ## [3.0.0](https://github.com/dnlup/fastify-traps/compare/v2.0.0...v3.0.0) (2023-08-31)
 
 
