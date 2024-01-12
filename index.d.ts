@@ -1,15 +1,26 @@
 import {
   FastifyPluginCallback,
-} from 'fastify-plugin'
+} from 'fastify'
 
-export interface TrapsPluginOptions {
-  timeout?: number,
-  onSignal?: (signal: 'SIGTERM' | 'SIGINT') => void,
-  onClose?: () => void,
-  onTimeout?: (timeout: number) => void,
-  onError?: (error: Error|any) => void,
-  strict?: boolean
+type FastifyTrapsPlugin = FastifyPluginCallback<fastifyTraps.FastifyTrapsOptions>
+
+declare namespace fastifyTraps {
+
+  export interface FastifyTrapsOptions {
+    timeout?: number,
+    onSignal?: (signal: 'SIGTERM' | 'SIGINT') => void,
+    onClose?: () => void,
+    onTimeout?: (timeout: number) => void,
+    onError?: (error: Error|any) => void,
+    strict?: boolean
+  }
+
+  export const fastifyTraps: FastifyTrapsPlugin
+  export { fastifyTraps as default }
 }
 
-const plugin: FastifyPluginCallback<TrapsPluginOptions>;
-export = plugin;
+declare function fastifyTraps(
+  ...params: Parameters<FastifyTrapsPlugin>
+): ReturnType<FastifyTrapsPlugin>
+
+export = fastifyTraps;
