@@ -59,6 +59,6 @@
     "typescript": "^5.0.4"
   },
   "dependencies": {
-    "fastify-plugin": "^4.0.0"
+    "fastify-plugin": "^5.0.1"
   }
 }
