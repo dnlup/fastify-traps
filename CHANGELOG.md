@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.1.0](https://github.com/dnlup/fastify-traps/compare/v3.0.2...v3.1.0) (2024-11-29)
+
+
+### Features
+
+* support fastify 5 ([#346](https://github.com/dnlup/fastify-traps/issues/346)) ([0bffa37](https://github.com/dnlup/fastify-traps/commit/0bffa374492117d34740409350a8ee3ae79eb8b2))
+
 ### [3.0.2](https://github.com/dnlup/fastify-traps/compare/v3.0.1...v3.0.2) (2024-01-16)
 
 ### [3.0.1](https://github.com/dnlup/fastify-traps/compare/v3.0.0...v3.0.1) (2023-12-21)
