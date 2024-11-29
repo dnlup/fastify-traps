@@ -8,7 +8,4 @@ const fastify = Fastify(fastifyOptions)
 
 fastify.register(plugin, { strict: false })
 
-fastify.listen(0, (err) => {
-  const payload = err ? 'error' : 'listening'
-  send(payload)
-})
+fastify.listen({ port: 0 }).then(() => send('listening')).catch(e => send('error'))

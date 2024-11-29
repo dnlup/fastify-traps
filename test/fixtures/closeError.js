@@ -17,6 +17,4 @@ fastify.register(plugin, {
   strict: false
 })
 
-fastify.listen(0, err => {
-  send(err ? 'error' : 'listening')
-})
+fastify.listen({ port: 0 }).then(() => send('listening')).catch(e => send('error'))
