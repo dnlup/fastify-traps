@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest, macos-latest]
-        node-version: [14.x, 16.x]
+        node-version: [20.x, 22.x]
 
     runs-on: ${{ matrix.os }}
 
@@ -36,6 +36,9 @@ jobs:
 
       - name: Run tests
         run: npm run test:ci
+
+      - name: Run tests on fastify 4
+        run: npm i fastify@4 && npm run test:ci
 
       - name: Coverage report
         uses: codecov/codecov-action@v3.1.4
